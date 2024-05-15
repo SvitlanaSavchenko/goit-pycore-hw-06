@@ -17,3 +17,9 @@ class Phone(Field):
             raise ValueError("The phone number must contain only numbers")
 
         return True
+
+    def __eq__(self, other):
+        """Магічний метод для порівняння об'єктів класу Phone за їхнім значенням."""
+        if isinstance(other, Phone):
+            return self.value == other.value
+        return False
